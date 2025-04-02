@@ -1,56 +1,81 @@
-#  Repository Name :  BankMarketing_MLModel :
+# 🏦 Bank Tele Marketing Machine Learning Model
 
-# Topic Name : Bank Tele Marketing Prediction Model
+## 📊 Predicting Customer Subscription Using ML
 
-# Dataset Information
+### 🔹 Overview
+
+This project focuses on **predicting whether a customer will subscribe to a bank term deposit** based on historical marketing data. We use **Logistic Regression and Random Forest Classifier** to classify customer responses and evaluate model performance using various metrics.
+
+---
+
+## 📂 Dataset Information
+
+- **Dataset:** Bank Marketing Dataset (UCI Repository)
+- **Size:** 41,188 rows, 21 features
+- **Target Variable:** `y` (Subscribed: Yes/No)
+
+### 🔑 Key Features Used:
+
+✅ Age, Job Type, Marital Status, Education Level\
+✅ Default History, Balance, Housing Loan, Personal Loan\
+✅ Contact Type, Day of Contact, Month, Campaign Information\
+✅ Previous Outcomes & Communication Details
+
+---
+
+## 🚀 Project Workflow
+
+1️⃣ **Data Cleaning & Preprocessing**
+
+- Handled missing values and outliers
+- Encoded categorical variables
+- Scaled numerical features
+
+2️⃣ **Exploratory Data Analysis (EDA)**
+
+- Visualized customer demographics & marketing campaign success
+- Analyzed correlations & key influencing factors
+
+3️⃣ **Feature Engineering**
+
+- One-hot encoding for categorical variables
+- Feature scaling using MinMax Scaler
+
+4️⃣ **Model Training & Evaluation**
+
+- **Logistic Regression & Random Forest Classifier**
+- **Hyperparameter Tuning for Random Forest**
+- Performance evaluation using **Confusion Matrix, AUC-ROC Curve, Precision-Recall**
+
+---
+
+## 📈 Model Performance
+
+| Model               | Accuracy | Precision | Recall | AUC-ROC |
+| ------------------- | -------- | --------- | ------ | ------- |
+| Logistic Regression | 81.2%    | 87.5%     | 76.8%  | 0.88    |
+| Random Forest       | 89.2%    | 89.3%     | 80.2%  | 0.91    |
+
+**🔹 Insights:**\
+✅ Random Forest performed better in terms of recall and AUC-ROC.\
+✅ The marketing campaign success rate is influenced by previous interactions and customer demographics.
+
+---
 
 
-The data is related with direct marketing campaigns of a Portuguese banking institution. The marketing campaigns were based on phone calls. Often, more than one contact to the same client was required, in order to access if the product (bank term deposit) would be ('yes') or not ('no') subscribed. 
+## 💡 Key Learnings
 
-There are four datasets: 
+✅ Importance of feature engineering in improving model accuracy.\
+✅ How to evaluate models using AUC-ROC & precision-recall metrics.\
+✅ How marketing campaign strategies impact customer decisions.
 
-1) bank-additional-full.csv with all examples (41188) and 20 inputs, ordered by date (from May 2008 to November 2010), very close to the data analyzed in [Moro et al., 2014]
+---
 
-2) bank-additional.csv with 10% of the examples (4119), randomly selected from 1), and 20 inputs.
+## 👨‍💻 Project By 
 
-3) bank-full.csv with all examples and 17 inputs, ordered by date (older version of this dataset with less inputs). 
+**Anirudha Johare**
 
-4) bank.csv with 10% of the examples and 17 inputs, randomly selected from 3 (older version of this dataset with less inputs). 
-The smallest datasets are provided to test more computationally demanding machine learning algorithms (e.g., SVM). 
-
-The classification goal is to predict if the client will subscribe (yes/no) a term deposit (variable y).
+- 📧 [Email] : anirudhajohare@gmail.com
+- 🔗 [LinkedIn]: https://www.linkedin.com/in/anirudhajohare/
 
 
-# Additional Variable Information
-
-Input variables:
-   # bank client data:
-   1 - age (numeric)
-   2 - job : type of job (categorical: "admin.","unknown","unemployed","management","housemaid","entrepreneur","student",
-                                       "blue-collar","self-employed","retired","technician","services") 
-   3 - marital : marital status (categorical: "married","divorced","single"; note: "divorced" means divorced or widowed)
-   4 - education (categorical: "unknown","secondary","primary","tertiary")
-   5 - default: has credit in default? (binary: "yes","no")
-   6 - balance: average yearly balance, in euros (numeric) 
-   7 - housing: has housing loan? (binary: "yes","no")
-   8 - loan: has personal loan? (binary: "yes","no")
-   # related with the last contact of the current campaign:
-   9 - contact: contact communication type (categorical: "unknown","telephone","cellular") 
-  10 - day: last contact day of the month (numeric)
-  11 - month: last contact month of year (categorical: "jan", "feb", "mar", ..., "nov", "dec")
-  12 - duration: last contact duration, in seconds (numeric)
-   # other attributes:
-  13 - campaign: number of contacts performed during this campaign and for this client (numeric, includes last contact)
-  14 - pdays: number of days that passed by after the client was last contacted from a previous campaign (numeric, -1 means client was not previously contacted)
-  15 - previous: number of contacts performed before this campaign and for this client (numeric)
-  16 - poutcome: outcome of the previous marketing campaign (categorical: "unknown","other","failure","success")
-
-  Output variable (desired target):
-  17 - y - has the client subscribed a term deposit? (binary: "yes","no")
-  
-
-# Prediction Model : Multivariate Analysis 
-
-# Model : Binary Classification Model 
-
-# Target Column  : y : To predict Whether The Client Subscribed a Term Deposit or Not ?
