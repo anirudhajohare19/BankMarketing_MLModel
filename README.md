@@ -1,18 +1,23 @@
 # 🏦 Bank Tele Marketing Machine Learning Model
 
+This project aims to predict whether a client will subscribe to a term deposit based on the Bank Marketing dataset using supervised machine learning models. It includes end-to-end steps from data cleaning, EDA, preprocessing, model training, evaluation, and tuning.
+
+## 📌 Problem Statement
+
+A Portuguese banking institution wants to identify clients who are likely to subscribe to a term deposit. The goal is to build a predictive model that can assist in improving their marketing campaign effectiveness.
+
+
 ## 📊 Predicting Customer Subscription Using ML
 
-### 🔹 Overview
-
-This project focuses on **predicting whether a customer will subscribe to a bank term deposit** based on historical marketing data. We use **Logistic Regression and Random Forest Classifier** to classify customer responses and evaluate model performance using various metrics.
 
 ---
 
 ## 📂 Dataset Information
 
-- **Dataset:** Bank Marketing Dataset (UCI Repository)
-- **Size:** 41,188 rows, 21 features
-- **Target Variable:** `y` (Subscribed: Yes/No)
+- **Source**: UCI Machine Learning Repository - [Bank Marketing Dataset](https://archive.ics.uci.edu/ml/datasets/bank+marketing)
+- **Total Rows and Columns**: ~41,000 and 21 
+- **Target Variable**: `y` – Whether the client subscribed (`yes` or `no`)
+
 
 ### 🔑 Key Features Used:
 
@@ -23,38 +28,41 @@ This project focuses on **predicting whether a customer will subscribe to a bank
 
 ---
 
-## 🚀 Project Workflow
+## 🔍 Key Steps Performed
 
-1️⃣ **Data Cleaning & Preprocessing**
+### 1. 📊 Exploratory Data Analysis (EDA)
+- Statistical summaries and missing values check
+- Visual distribution of categorical variables
+- Correlation heatmap of numerical features
 
-- Handled missing values and outliers
-- Encoded categorical variables
-- Scaled numerical features
+### 2. 🧼 Preprocessing
+- Label encoding of categorical columns
+- Feature scaling with `StandardScaler`
 
-2️⃣ **Exploratory Data Analysis (EDA)**
+### 3. 🤖 Model Building
+Trained and evaluated the following models:
+- Logistic Regression
+- Random Forest Classifier
+- XGBoost Classifier
 
-- Visualized customer demographics & marketing campaign success
-- Analyzed correlations & key influencing factors
+### 4. ✅ Evaluation Metrics
+- Confusion Matrix
+- Classification Report (Precision, Recall, F1-score)
+- ROC-AUC Score & ROC Curve
 
-3️⃣ **Feature Engineering**
-
-- One-hot encoding for categorical variables
-- Feature scaling using MinMax Scaler
-
-4️⃣ **Model Training & Evaluation**
-
-- **Logistic Regression & Random Forest Classifier**
-- **Hyperparameter Tuning for Random Forest**
-- Performance evaluation using **Confusion Matrix, AUC-ROC Curve, Precision-Recall**
+### 5. 🔧 Hyperparameter Tuning
+- Used `GridSearchCV` on Random Forest for optimal parameter selection
 
 ---
 
-## 📈 Model Performance
+## 📈 Results
 
-| Model               | Accuracy | Precision | Recall | AUC-ROC |
-| ------------------- | -------- | --------- | ------ | ------- |
-| Logistic Regression | 81.2%    | 87.5%     | 76.8%  | 0.88    |
-| Random Forest       | 89.2%    | 89.3%     | 80.2%  | 0.91    |
+| Model              | Accuracy | Precision | Recall | ROC-AUC |
+|-------------------|----------|-----------|--------|---------|
+| Logistic Regression | ~88%    | Good      | Good   | Good    |
+| Random Forest       | ~90%+   | Better    | Better | Better  |
+| XGBoost             | ~90%+   | Best      | Best   | Best    |
+
 
 **🔹 Insights:**\
 ✅ Random Forest performed better in terms of recall and AUC-ROC.\
