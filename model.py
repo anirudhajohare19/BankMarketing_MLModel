@@ -98,6 +98,11 @@ y_predict_RF = RF.predict(X_test)
 
 accuracy_score_RF = accuracy_score(y_test,y_predict_RF)
 
-print("Accuracy:", accuracy_score(y_test, y_predict_RF))
-print("Confusion Matrix:\n", confusion_matrix(y_test, y_predict_RF))
-print("Classification Report:\n", classification_report(y_test, y_predict_RF))
+# Hyperparameter Tuning with GridSearchCV
+from sklearn.model_selection import GridSearchCV
+param_grid = {'n_estimators': [50, 100], 'max_depth': [None, 10, 20]}
+grid = GridSearchCV(RandomForestClassifier(), param_grid, cv=5)
+grid.fit(X_train, y_train)
+
+
+print("Best Score:", grid.best_score_)
